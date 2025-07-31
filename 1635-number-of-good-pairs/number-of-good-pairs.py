@@ -1,12 +1,18 @@
 class Solution:
     def numIdenticalPairs(self, nums: List[int]) -> int:
+        dici={}
+        for i in nums:
+            if i not in dici:
+                dici[i]=1
+            else:
+                dici[i]+=1
+        print(dici)
         ans=0
-        for i in range(0,len(nums)):
-            for j in  range(1,len(nums)):
-                if nums[i]==nums[j] and i <j:
-                    print(nums[i],nums[j])
-                    ans+=1
-        return ans
-        
+        for val1 in dici:
+            val=dici[val1]
+            if val>1:
+                ans += val * (val - 1) // 2
 
+            
+        return ans
 
