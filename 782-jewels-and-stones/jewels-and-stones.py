@@ -3,9 +3,13 @@ class Solution:
         dici={}
         for i in jewels:
             dici[i]=0
+            print(dici)
         ans=0
-        for j in dici:
-            for i in range(len(stones)):
-                if j==stones[i]:
-                    ans+=1
+        for i in range(len(stones)):
+            # print(stones[i],dici[stones[i]])
+            if stones[i] in dici:
+                dici[stones[i]]+=1
+                ans+=1
+            print(dici)
+
         return ans
