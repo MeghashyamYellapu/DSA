@@ -7,7 +7,7 @@ class Solution:
         for r in range(n):
             temp+=s[r]
             if r-l==3:
-                temp.remove(s[l])
+                temp.pop(0)
                 l+=1
             if r-l+1==3 and len(set(temp))==3:
                 ans+=1
